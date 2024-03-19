@@ -19,7 +19,7 @@ import java.util.List;
 
 public abstract class BasePage {
 
-    @FindBy(css = "span.title-level-1")
+    @FindBy(css = ".menu-item-link-text")
     public List<WebElement> menuOptions;
 
     @FindBy(css = "div[class='loader-mask shown']")
@@ -29,10 +29,8 @@ public abstract class BasePage {
     @FindBy(css = "h1[class='oro-subtitle']")
     public WebElement pageSubTitle;
 
-    @FindBy(css = "#user-menu > a")
-    public WebElement userName;
 
-    @FindBy(linkText = "Logout")
+    @FindBy(xpath = "//span[.='Log out']")
     public WebElement logOutLink;
 
     @FindBy(linkText = "My User")
