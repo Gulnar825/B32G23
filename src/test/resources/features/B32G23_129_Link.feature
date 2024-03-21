@@ -1,6 +1,9 @@
 @B32G23-148
 Feature: Default
 
+	Background:
+		Then user logs in as marketing
+
 	
 	@B32G23-146
 	Scenario: Verify that the user can attach a link to the specified text.
