@@ -5,6 +5,7 @@ package com.B32G23.pages;
 
 import com.B32G23.utilities.BrowserUtils;
 import com.B32G23.utilities.Driver;
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,6 +37,12 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+
+    @FindBy(id = "user-block")
+    public WebElement profileIcon;
+
+    @FindBy(css = ".menu-popup-item.menu-popup-no-icon")
+    public List<WebElement> profileDropdown;
 
 
     public BasePage() {
