@@ -37,12 +37,12 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+
     @FindBy(id = "user-block")
     public WebElement profileIcon;
 
     @FindBy(css = ".menu-popup-item.menu-popup-no-icon")
     public List<WebElement> profileDropdown;
-
 
 
     public BasePage() {

@@ -17,6 +17,7 @@ import org.junit.runner.RunWith;
         glue = "com/B32G23/step_definitions",
         dryRun = false,
         tags = "@B32G23_125",
+        tags = "",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}
