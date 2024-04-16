@@ -18,7 +18,7 @@ public class MessagePage {
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement messageAria;
 
-    @FindBy(tagName = "body")
+    @FindBy(xpath = "//body[@style='min-height: 184px;']")
     public WebElement inputText;
 
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
@@ -26,6 +26,15 @@ public class MessagePage {
 
     @FindBy(xpath = "//div[contains(@id, 'blog_post_body')]")
     public WebElement message;
+
+    @FindBy(xpath = "//div[contains(@id, 'blog_post_body')]/a[1]")
+    public WebElement messageLink;
+
+    @FindBy(xpath = "//span[text()='The message title is not specified']")
+    public WebElement errorMessage1;
+
+    @FindBy(xpath = "//span[text()='Please specify at least one person.']")
+    public WebElement errorMessage2;
 
     @FindBy(id = "bx-b-link-blogPostForm")
     public WebElement linkButton;
@@ -39,7 +48,15 @@ public class MessagePage {
     @FindBy(className = "adm-btn-save")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//div[contains(@id, 'blog_post_body')]/a[1]")
-    public WebElement messageLink;
+    @FindBy(id = "blog-submit-button-cancel")
+    public WebElement cancelButton;
+
+    @FindBy(className = "feed-add-post-destination-text")
+    public WebElement allEmployeesBtn;
+
+    @FindBy(css = ".feed-add-post-del-but")
+    public WebElement closeAllEmployeesBtn;
+
+
 
 }

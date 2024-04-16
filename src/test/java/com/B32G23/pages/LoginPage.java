@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BasePage{
 
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -21,8 +21,14 @@ public class LoginPage {
     @FindBy(css = ".login-btn")
     public WebElement loginBtn;
 
-    @FindBy(css = ".login-item-checkbox-label")
+    @FindBy(css=".errortext")
+    public WebElement errorMessage;
+
+    @FindBy(id = "USER_REMEMBER")
     public WebElement rememberMeCheckBox;
+
+    @FindBy(id = "errortext2")
+    public WebElement errormessage2;
 
     public void login(String inputUsername, String inputPassword) {
         username.sendKeys(inputUsername);
