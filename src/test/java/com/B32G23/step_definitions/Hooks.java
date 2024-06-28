@@ -6,9 +6,7 @@ package com.B32G23.step_definitions;
 import com.B32G23.utilities.BrowserUtils;
 import com.B32G23.utilities.ConfigurationReader;
 import com.B32G23.utilities.Driver;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -20,13 +18,19 @@ for ALL the SCENARIOS and even STEPS.
  */
 public class Hooks {
 
-    //import the @Before coming from io.cucumber.java
+
+
+
     @Before (order = 1)
     public void setupMethod(){
 
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+
+            Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+            Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+
+
     }
 
     //@Before (value = "@login", order = 2 )
@@ -40,6 +44,7 @@ public class Hooks {
     @After
     public void teardownMethod(Scenario scenario){
 
+
         if (scenario.isFailed()) {
 
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
@@ -50,16 +55,22 @@ public class Hooks {
 
 
         BrowserUtils.sleep(2);
-        Driver.closeDriver();
+
+
+
+
+            Driver.closeDriver();
+
 
     }
 
-    //@BeforeStep
+
+    @BeforeStep
     public void setupStep(){
         System.out.println("-----> @BeforeSTEP : Running before each step!");
     }
 
-    //@AfterStep
+    @AfterStep
     public void teardownStep(){
         System.out.println("-----> @AfterSTEP : Running after each step!");
     }
